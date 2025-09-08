@@ -1,3 +1,9 @@
+/*
+Para poder imprmir la matriz de esa manera unicamnete debemos desenrollar su estructura, como podemos ver la la primera fila de la matriz va de los numeros 1,2,3,4
+despues va la columna impriminedo 5,6,7,8. Asi de manera sucesiva, para esto debemos jugar con las posiciones al imprimir, debemos recorrer la prm¿imera fila, despues bloquear las filas 
+y recorrer las columnas, para eos usamos las condiciones mientras estes en top menor que bottom y de la misma manera para left y right.
+*/
+
 #include <stdio.h> //librerias
 #include <stdlib.h>//librerias
 
