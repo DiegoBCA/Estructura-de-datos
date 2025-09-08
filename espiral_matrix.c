@@ -10,28 +10,28 @@ void spiralOrder(int rows, int cols, int **matrix) { //funcion para recibir las 
         for (int i = left; i <= right; i++) { //recorrer la matriz eh imprimir los valores
             printf("%d ", matrix[top][i]);
         } //hasta que se acaben los de la fila
-        top++;
+        top++; //necesaria para continuar con la siguiente ilera
 
         // De arriba hacia abajo en la columna derecha
         for (int i = top; i <= bottom; i++) { //recorrer la matriz
             printf("%d ", matrix[i][right]); //imprimir los valores
         } //hasta que se acaben los de la fila
-        right--;
+        right--; //necesaria para regresar a la columna anterior
 
         if (top <= bottom) { 
             // De derecha a izquierda en la fila inferior
             for (int i = right; i >= left; i--) { //recorrer la matriz
                 printf("%d ", matrix[bottom][i]); //imprimir cada valor
             } //hasta que se acaben los de la fila
-            bottom--;
-        }
+            bottom--; //necesaria para volver una fila arriba
+        } 
 
         if (left <= right) { 
             // De abajo hacia arriba en la columna izquierda
             for (int i = bottom; i >= top; i--) { //recorrer la matriz
                 printf("%d ", matrix[i][left]); //imprimir la matriz
             } //hasta que se acaben los valores
-            left++;
+            left++;//avanazar una columna a la derecha
         }
     }
 }
@@ -56,7 +56,7 @@ int main() {
 
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            matrix[i][j] = values[i][j];
+            matrix[i][j] = values[i][j];//guardamos la matriz values en el apuntador matrix
         }
     }
 
@@ -64,8 +64,8 @@ int main() {
     spiralOrder(rows, cols, matrix);
 
     // Liberar la memoria asignada
-    for (int i = 0; i < rows; i++) {
-        free(matrix[i]);
+    for (int i = 0; i < rows; i++) { //recorre la matriz
+        free(matrix[i]); //libera cada casilla de la matriz
     }
     free(matrix);
 
