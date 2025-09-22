@@ -67,7 +67,16 @@ int main(){
                 printf("Escribe solo la letra E,D o Q\n");
                 break;
         }
-        printf("\n");
+        // Muestra el contenido de la cola después de cada operación
+        printf("Current queue content: ");
+        if (front == -1 || front > rear) {
+            printf("The queue is empty.\n\n");
+        } else {
+            for (int i = front; i <= rear; i++) {
+                printf("%d ", queue[i]);
+            }
+            printf("\n\n");
+        }
     }
 
     return 0;
